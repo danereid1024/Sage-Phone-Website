@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title></title>
+                    <!-- Link to CSS -->
+                    <link rel='stylesheet' href='styles.css'>
+                        <script type="text/javascript">
+
+                                function chkPasswords() {
+                                    var psw = document.getElementById("psw");
+                                    var pswRepeat = document.getElementById("psw-repeat");
+                                    if (psw.value == "") {
+                                        alert("You did not enter a password \n" +
+                                            "Please enter one now");
+                                        return false;
+                                    }
+                                    if (psw.value != pswRepeat.value) {
+                                        alert("The two passwords you entered are not the same \n" +
+                                            "Please re-enter both now");
+                                        return false;
+                                    } else
+                                        return true;
+                                }
+                            </script>
+                </head>
+    <body>
+        <header>
+           
+           <!-- Nav -->
+            <div class="nav container">
+                <a href="home.html" class="logo">Home</a>
+                <a href="index.html" class="logo">Phones</a>
+                <a href="contact.html" class="logo">Contact</a>
+                <a href="login.html" class="logo">Login</a>
+                </div>
+        </header>
+        <form id="form" action="signup-complete.html">
+          <div class="container">
+
+            <label><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" id="email" required />
+
+            <label><b>Password</b>
+            <input type="password" placeholder="Enter Password" name="psw" id="psw" required/>
+            </label>
+
+            <label><b>Repeat Password</b>
+            <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required/>
+            </label>
+            <hr>
+                <input type="submit" name="submit" />
+          </div>
+        </form>
+    </body>
+        <!-- Link to JS -->
+        <script>
+            document.getElementById("psw-repeat").onblur = chkPasswords;
+            document.getElementById("form").onsubmit = chkPasswords;
+        </script>
+</html>
+
+
